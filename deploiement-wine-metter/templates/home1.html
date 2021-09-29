@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict wine quality</title>
+  <h2>{{cnt}}</h2>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+</head>
+<style>
+  ul {
+    color: plum;
+    background-color:plum;
+  }
+</style>
+<body>
+    <nav>
+      <ul
+          <li><a href="home2">Lisez moi !</li></a>
+      </ul>
+    </nav>
+ <div class="login">
+	<h1>WINE</h1>
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="fixed_acidity" placeholder="fixed_acidity" required="required" /><br>
+    	<input type="text" name="volatile_acidity" placeholder="volatile_acidity" required="required" /><br>
+        <input type="text" name="citric_acid" placeholder="citric_acid" required="required" /><br>
+        <input type="text" name="total_sulfur_dioxide" placeholder="total_sulfur_dioxide" required="required" /><br>
+        <input type="text" name="density" placeholder="density" required="required" /><br>
+        <input type="text" name="pH" placeholder="pH" required="required" /><br>
+        <input type="text" name="sulphates" placeholder="sulphates" required="required" /><br>
+        <input type="text" name="alcohol" placeholder="alcohol" required="required" /><br>
+        <input type="text" name="residual_sugar" placeholder="residual_sugar" required="required" /><br>
+        <input type="text" name="chlorides" placeholder="chlorides" required="required" /><br>
+        <input type="text" name="free_sulfur_dioxide" placeholder="free_sulfur_dioxide" required="required" /><br>
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+<div class="centered">
+  <h1>API Documentation</h1>
+  <p>
+    Bienvenue dans la documentation API de notre application de Machine Learning sur Quality Wine.
+  </p>
+  <p>
+    Cette API vous aidera à choisir un vin de meilleure qualité.
+    Par conséquent, vous apprécierez mieux votre verre de vin pour la soirée.
+</p>
+  <div>
+    <h2>Endpoint 1 : Entrez vos données</h2>
+    <blockquote>
+        GET / POST : https://wine-o-flavs.herokuapp.com/
+      </blockquote>
+      <div>
+        <p>
+          Ce critère vous permet de faire une prédiction de vin de qualité avec les caractéristiques que vous renseignez (ex : Alcool, Chlorures ; pH) 
+        </p>
+        <h3>
+          Comment demander ce point de terminaison ?
+        </h3>
+        <p>
+          Il vous suffit de cliquer sur le bouton « predict » après avoir saisi les données (11 caractéristiques).<br>
+          Le bouton prredict qui utilisera la méthode POST. Il utilisera la racine ("https://wine-o-flavs.herokuapp.com/")<br>
+          La racine applique en fait le modèle de machine Learning. 
+        </p>
+        <p>
+          Exemple : Saisissez les données et cliquez sur « Predict »
+        </p>
+        <p>
+          Il renvoie par exemple un message 'Ce vin est de qualité : {} / 10'
+          <p>
+    <h2>Endpoint 2 : API request</h2>
+    <blockquote>
+      POST : https://wine-o-flavs.herokuapp.com/predict_api
+    </blockquote>
+    <div>
+      <p>
+        Ce point de terminaison vous permet de faire une prédiction de vin de qualité avec les caractéristiques que vous envoyez/postez.
+      </p>
+      <h3>
+        Comment demander ce point de terminaison ?
+      </h3>
+      <p>
+        Vous devez demander ce point de terminaison à l'aide d'une méthode POST avec un contenu JSON. Votre JSON doit contenir les 11 éléments requis (ex : Alcool, Chlorures en format float).
+      </p>
+      <p>
+        Example 1: cette commande sera à effectuer dans le terminal<code>curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[6.6,0.16,0.4,1.5,0.044,48,143,0.9912,3.54,0.52,12.4]]}' https://wine-o-flavs.herokuapp.com/predict_api</code>
+      </p>
+      <p>
+        Il renvoie un JSON comme ceci :
+        <pre>
+          <code>
+  {'predict': 7.0}
+  <p>
+    Example 2: <code>import requests<br>
+        response = requests.post("https://wine-o-flavs.herokuapp.com/predict_api", json={
+            "input": [[6.6,0.16,0.4,1.5,0.044,48,143,0.9912,3.54,0.52,12.4]]})
+    print(response.json())
+        </code>
+  </p>
+  <p>
+    Il renvoie un JSON comme ceci :
+    <pre>
+      <code>
+{'predict': 7.0}
+      <h3>
+        les erreurs
+      </h3>
+      <p>
+        Notre API renverra une erreur au format :
+        <pre>
+      <p>
+        "msg": "Erreur : pas de JSON ou pas de clé spécifique dans votre requête"
+      </p>
+      <p>
+        bien joué maintenant buvons un coup !
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<!DOCTYPE html>
+</div>
+</head>
+</html>
