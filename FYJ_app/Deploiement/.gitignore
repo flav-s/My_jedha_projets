@@ -1,0 +1,4 @@
+virt
+*.pyc
+.DS_Store
+.env
