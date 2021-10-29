@@ -1,7 +1,3 @@
-ML en production
+RECONNAISSANCE & RECHERCHE PRODUIT :AUTOMOBILE
+![image](https://user-images.githubusercontent.com/83395559/139408955-a2b7a888-5847-4eb0-b283-484928bf0f4e.png)
 
-Wine-o-meter est une future application. Il permet aux viticulteurs de prédire le score qualitatif de leur vin en fonction des intrants physico-chimiques. La startup à l'origine de cette innovation est convaincue de sa capacité à bouleverser le monde du vin. 
-	
-L'application est composé d'une page de documentation mais aussi de 2 points de términaison
-
-Vous pouvez également consulter l'application sur le lien : https://wine-o-flavs.herokuapp.com/
